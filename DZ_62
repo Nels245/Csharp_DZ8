@@ -5,23 +5,22 @@
 //  11 16 15 06
 //  10 09 08 07
 
-        int[,] m = new int[4, 4];
-
-        m[0,0] = 10;
-        int count = 1;
-        
-        for (int x = 0; x < m.GetLength(0); x++)
-            for (int y = 0; y < m.GetLength(1); y++)
-            {
-                    m[x, y] = m[0,0] + count;
-                    count += 1;
-            }
-            
-        for (int x = 0; x < m.GetLength(0); x++)
-        {
-            for (int y = 0; y < m.GetLength(1); y++)
-            {
-                Console.Write($"{m[x, y]} ");  
-            }
-            Console.WriteLine();
-        }
+    int size = 4;    
+    int[][] numbers = new int[4][4];
+    
+    PrintInSpiral(numbers, 4);
+    
+void PrintInSpiral(int [][] numbers, int size)
+{
+for(int i = size – 1 , j = 0 ; i >= 0 ; i–, j++)
+{
+for(int k = j ; k < i; k++)
+Console.Write(numbers[j][k]+ " ");
+for(int k = j ; k < i; k++) 
+Console.Write(numbers[k][i]+ " ");
+for(int k = i ; k > j; k–)
+Console.Write(numbers[i][k]+ " ");
+for(int k = i ; k > j; k–)
+Console.Write(numbers[k][j]+ " ");
+}
+}
